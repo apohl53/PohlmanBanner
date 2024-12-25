@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
-import Gallery from "./pages/Gallery";
+import Gallery from "./components/Gallery";
 import "./App.css";
+import { Main } from "next/document";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         >
           Learn React
         </a>
-        <Gallery />
+        <Main />
       </header>
     </div>
   );
