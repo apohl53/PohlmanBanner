@@ -1,7 +1,6 @@
 import logo from "./logo.svg";
-import Gallery from "./components/Gallery";
 import "./App.css";
-import { Main } from "next/document";
+import MemorialGallery from "src/components/Gallery.jsx";
 
 function App() {
   return (
@@ -19,7 +18,7 @@ function App() {
         >
           Learn React
         </a>
-        <Main />
+        <MemorialGallery />
       </header>
     </div>
   );

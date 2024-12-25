@@ -3,11 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import { X, Plus, ChevronLeft, ChevronRight } from "lucide-react";
-import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { ScrollArea } from "@/components/ui/scroll-area";
+// import { Dialog, DialogContent, DialogClose } from "@radix-ui/react-dialog";
+// import { Button } from "@radix-ui/react-button";
+// import { Input } from "@radix-ui/react-input";
+// import { Badge } from "@radix-ui/react-badge";
+// import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { Button, Input, Badge } from "@mui/material";
+import { Dialog, DialogContent, DialogActions } from "@mui/material"; // Dialog from Material UI
 
 // Mock data for the gallery
 const initialPhotos = [
@@ -127,25 +129,25 @@ export default function MemorialGallery() {
           </div>
           <div className="mt-4">
             <h3 className="text-lg font-semibold mb-2">Tags:</h3>
-            <ScrollArea className="h-20">
-              <div className="flex flex-wrap gap-2">
-                {selectedPhoto?.tags.map((tag) => (
-                  <Badge
-                    key={tag}
-                    variant="secondary"
-                    className="text-sm flex items-center gap-1"
-                  >
-                    {tag}
-                    <X
-                      className="h-3 w-3 cursor-pointer"
-                      onClick={() =>
-                        selectedPhoto && removeTag(selectedPhoto.id, tag)
-                      }
-                    />
-                  </Badge>
-                ))}
-              </div>
-            </ScrollArea>
+            {/* <ScrollArea className="h-20"> */}
+            <div className="flex flex-wrap gap-2">
+              {selectedPhoto?.tags.map((tag) => (
+                <Badge
+                  key={tag}
+                  variant="secondary"
+                  className="text-sm flex items-center gap-1"
+                >
+                  {tag}
+                  <X
+                    className="h-3 w-3 cursor-pointer"
+                    onClick={() =>
+                      selectedPhoto && removeTag(selectedPhoto.id, tag)
+                    }
+                  />
+                </Badge>
+              ))}
+            </div>
+            {/* </ScrollArea> */}
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -180,9 +182,9 @@ export default function MemorialGallery() {
             >
               <ChevronLeft className="h-4 w-4 mr-2" /> Previous
             </Button>
-            <DialogClose asChild>
+            {/* <DialogClose asChild>
               <Button variant="outline">Close</Button>
-            </DialogClose>
+            </DialogClose> */}
             <Button
               variant="outline"
               onClick={() => {
