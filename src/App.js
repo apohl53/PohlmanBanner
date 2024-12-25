@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import MemorialGallery from "src/components/Gallery.jsx";
+import MemorialGallery from "./components/Gallery";
 
 function App() {
   return (

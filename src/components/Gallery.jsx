@@ -9,7 +9,7 @@ import { X, Plus, ChevronLeft, ChevronRight } from "lucide-react";
 // import { Badge } from "@radix-ui/react-badge";
 // import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { Button, Input, Badge } from "@mui/material";
-import { Dialog, DialogContent, DialogActions } from "@mui/material"; // Dialog from Material UI
+import { Dialog, DialogContent } from "@mui/material"; // Dialog from Material UI
 
 // Mock data for the gallery
 const initialPhotos = [
