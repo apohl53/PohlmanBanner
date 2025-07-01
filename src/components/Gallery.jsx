@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import { useState } from "react";
 import Image from "next/image";
 import { X, Plus, ChevronLeft, ChevronRight } from "lucide-react";
@@ -15,9 +15,10 @@ import { Dialog, DialogContent } from "@mui/material"; // Dialog from Material U
 const initialPhotos = [
   {
     id: 1,
-    src: "public/images/IMG_1470.JPG",
+    src: "/images/IMG_1470.JPG", // ✅ fixed
     tags: ["John", "Ken, Toni, GDee, GKen, Tom"],
   },
+
   { id: 2, src: "/placeholder.svg?height=300&width=300", tags: ["John"] },
   { id: 3, src: "/placeholder.svg?height=300&width=300", tags: ["Sarah"] },
   {
