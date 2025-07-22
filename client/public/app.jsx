@@ -5,7 +5,7 @@ function App() {
   const [file, setFile] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:4000/photos")
+    fetch("http://localhost:40y00/photos")
       .then((res) => res.json())
       .then(setPhotos);
   }, []);
