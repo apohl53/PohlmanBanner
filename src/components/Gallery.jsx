@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import Image from "next/image";
+// import Image from "next/image"; // Not compatible with CRA
 import { X, Plus, ChevronLeft, ChevronRight } from "lucide-react";
 // import { Dialog, DialogContent, DialogClose } from "@radix-ui/react-dialog";
 // import { Button } from "@radix-ui/react-button";
@@ -91,14 +91,13 @@ export default function MemorialGallery() {
         {filteredPhotos.map((photo) => (
           <div
             key={photo.id}
-            className="relative aspect-square overflow-hidden rounded-lg border border-gray-200 cursor-pointer"
+            className="relative w-64 h-64 overflow-hidden rounded-lg border border-gray-200 cursor-pointer"
             onClick={() => setSelectedPhoto(photo)}
           >
-            <Image
+            <img
               src={photo.src}
-              alt={`Memorial photo ${photo.id}`}
-              layout="fill"
-              objectFit="cover"
+              alt={`Memorial ${photo.id}`}
+              className="w-full h-full object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
               <div className="flex flex-wrap gap-1">
@@ -120,11 +119,10 @@ export default function MemorialGallery() {
         <DialogContent className="sm:max-w-[80vw] sm:max-h-[90vh] flex flex-col">
           <div className="relative flex-grow">
             {selectedPhoto && (
-              <Image
+              <img
                 src={selectedPhoto.src}
-                alt={`Memorial photo ${selectedPhoto.id}`}
-                layout="fill"
-                objectFit="contain"
+                alt={`Memorial ${selectedPhoto.id}`}
+                className="w-full h-full object-contain"
               />
             )}
           </div>
